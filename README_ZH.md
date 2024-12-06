@@ -1,7 +1,7 @@
 # summernote-text-find 1.0.1
 
 Summernote-text-find插件
-[Summernote]（https://github.com/summernote/summernote/）所见即所得编辑器的插件。
+[Summernote](https://github.com/summernote/summernote/) 所见即所得编辑器的插件。
 
 
 

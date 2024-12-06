@@ -102,6 +102,22 @@
           });
           // 初始化
           this.initialize = function () {
+
+
+             // 监听按键事件，以便响应快捷键
+             $(document).on('keydown', function (e) {
+                if ((e.ctrlKey || e.metaKey) && e.key === 'f') { // Ctrl + F or Cmd + F
+                    e.preventDefault(); // 阻止默认的浏览器查找功能
+                    context.invoke('findtxt.toggleToolbar'); // 调用插件中的查找功能
+                } else if (e.metaKey && e.key === 'ArrowLeft') { // Cmd + Left Arrow
+                    e.preventDefault();
+                    context.invoke('findtxt.previous'); // 调用插件中的上一个功能
+                } else if (e.metaKey && e.key === 'ArrowRight') { // Cmd + Right Arrow
+                    e.preventDefault();
+                    context.invoke('findtxt.next'); // 调用插件中的下一个功能
+                }
+            });
+
               var fnrBody =
                   '<div id="findtxtToolbar" class="note-display-none">' +
                   '<div class="note-form-row">' +
@@ -120,6 +136,33 @@
               $('.note-toolbar').append(fnrBody);// 添加查找工具栏
               this.show();
           };
+
+
+            // 切换工具栏显示
+            this.toggleToolbar = function() {
+                var $editor = context.layoutInfo.editor;
+                var $note = context.layoutInfo.note;
+                $editor.find('.highlight').contents().unwrap('mark'); // 清除所有高亮
+                $('#findtxtToolbar').toggleClass(context.options.findtxt.classHidden);  // 切换工具栏显示
+                $('.note-status-output').text(''); // 清空状态输出
+                if ($note.summernote('createRange').toString()) {
+                    var selected = $note.summernote('createRange').toString();  // 获取选中文本
+                    $('#searchText').val(selected);  // 将选中文本填入搜索框
+                    $('.searchText-btn').click();
+                }
+            };
+             // 上一个匹配
+             this.previous = function() {
+                $('#noNextButton').click(); // 触发“上一个”按钮点击事件
+            };
+    
+            // 下一个匹配
+            this.next = function() {
+                $('#nextButton').click(); // 触发“下一个”按钮点击事件
+            };
+
+
+
           // 查找功能
           this.findtxt = function () {
               var $selectMatches = $('#selectMatches');  // 定位查找按钮
