@@ -1,4 +1,4 @@
-# summernote-text-find 1.0.1
+# summernote-text-find
 
 Summernote-text-find插件
 [Summernote](https://github.com/summernote/summernote/) 所见即所得编辑器的插件。
@@ -62,6 +62,7 @@ $(document).ready(function() {
 3. 支持上一个，下一个跳转
 4. 支持进度条显示
 5. 支持统计显示
+6. 支持快捷键进行查找,上一个,下一个
 
 
 

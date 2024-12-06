@@ -1,4 +1,4 @@
-# summernote-text-find 1.0.1
+# summernote-text-find
 
 Summernote-text-find plugin
 [Summernote](https://github.com/summernote/summernote/) Super Simple WYSIWYG Editor Plugin。
@@ -60,6 +60,7 @@ $(document).ready(function() {
 3. Support previous and next jumps
 4. Support progress bar display
 5. Support statistics show 
+6. Support shortcut keys to search, previous, next
 
 
 

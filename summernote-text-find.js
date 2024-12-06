@@ -1,5 +1,5 @@
 /**
- * Summernote Plugins summernote-text-find v1.0.1
+ * Summernote Plugins summernote-text-find v1.0.2
  * https://github.com/MaRuifu/summernote-text-find
  * 
  * Copyright [2024] Ma Ruifu
